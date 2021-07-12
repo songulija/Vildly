@@ -11,18 +11,34 @@ namespace Vidly.Controllers
     [Route("api/customers")]
     public class CustomersController : ControllerBase
     {
-        
+        /**
+         * Http request to api/customers
+         */
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult GetAllCustomers()
         {
             var customers = GetCustomers();
 
             return Ok(customers);
         }
+        /**
+         * HTTP request to api/customers/{id} providing id which is int
+         * it will look in our request and search for id
+         */
+        [HttpGet("{id}")]
+        public IActionResult Details(int id)
+        {
+            //getting single element in Customer list where customer.id is equal to given id
+            var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+            if (customer == null)
+                return NotFound();
 
-        
+            return Ok(customer);
+        }
 
-        //return List of customers
+        /**
+         * Function to return list of customer objects
+         */
         private IEnumerable<Customer> GetCustomers()
         {
             return new List<Customer>
