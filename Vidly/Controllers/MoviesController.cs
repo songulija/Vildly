@@ -33,9 +33,11 @@ namespace Vidly.Controllers
         }
 
         //HTTP request to api/movies/{year}/{moth} route, provide these two values
-        [HttpGet("{year}/{month}")]
+        //apply constraint to month, has to be 2 numbers
+        [HttpGet("{year}/{month:regex(\\d{2}):range(1,12)}")]
         public IActionResult ByReleaseDate(int year, int month)
         {
+            
             return Content(year+"/"+month);
         }
     }
