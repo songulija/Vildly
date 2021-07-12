@@ -12,31 +12,20 @@ namespace Vidly.Controllers
     [Route("api/[controller]")]
     public class MoviesController : ControllerBase
     {
+        private static List<Movie> moviesList = new List<Movie>
+        {
+            new Movie {Id = 1, Name = "Shrek"},
+            new Movie {Id = 2, Name = "Wall-e"}
+        };
+
+
         //this will be called when we go to Movies/Random
         //IActionResult is just data that we will return such as JSON 
         [HttpGet]
         public IActionResult GetMovies()
         {
-            var movie = new Movie()
-            {
-                Id = 1,
-                Name = "Shrek"
-            };
-            var customers = new List<Customer>
-            {
-                new Customer {Id = 1, Name = "Customer 1"},
-                new Customer {Id = 2, Name = "Customer 2"}
-            };
-            //viewModel class, asigning movie and customers
-            var viewModel = new RandomMovieViewModel
-            {
-                movie = movie,
-                customers = customers
-            };
-            //var viewResult = new ViewResult();
-            //viewResult.ViewData.Model;
-            //return View(movie);
-            return Ok(viewModel);
+            var movies = moviesList;
+            return Ok(movies);
         }
         //HTTP request to api/movies/{id} route. Providing id after movies
         [HttpGet("{id}")]

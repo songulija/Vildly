@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model Vidly.ViewModels.RandomMovieViewModel 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,7 +10,7 @@
 </head>
 <body>
     <header>
-        @Html.Partial("_NavBar")
+        @Html.Partial("_NavBar", Model.movie)
     </header>
     <div class="container">
         <main role="main" class="pb-3">
