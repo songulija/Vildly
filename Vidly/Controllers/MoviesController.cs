@@ -29,9 +29,14 @@ namespace Vidly.Controllers
         }
         //HTTP request to api/movies/{id} route. Providing id after movies
         [HttpGet("{id}")]
-        public IActionResult GetMovie(int id)
+        public IActionResult GetMovieById(int id)
         {
-            return Ok(id);
+            //find movie in moviesList with given id
+            var movie = moviesList.Find(c => c.Id == id);
+            if (movie == null)
+                return NotFound();
+
+            return Ok(movie);
 
         }
 

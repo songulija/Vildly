@@ -26,7 +26,7 @@ namespace Vidly.Controllers
          * it will look in our request and search for id
          */
         [HttpGet("{id}")]
-        public IActionResult Details(int id)
+        public IActionResult GetCustomerById(int id)
         {
             //getting single element in Customer list where customer.id is equal to given id
             var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
