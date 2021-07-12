@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Vidly.Models;
-
+using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -22,7 +22,21 @@ namespace Vidly.Controllers
                 Id = 1,
                 Name = "Shrek"
             };
-            return Ok(movie);
+            var customers = new List<Customer>
+            {
+                new Customer {Id = 1, Name = "Customer 1"},
+                new Customer {Id = 2, Name = "Customer 2"}
+            };
+            //viewModel class, asigning movie and customers
+            var viewModel = new RandomMovieViewModel
+            {
+                movie = movie,
+                customers = customers
+            };
+            //var viewResult = new ViewResult();
+            //viewResult.ViewData.Model;
+            //return View(movie);
+            return Ok(viewModel);
         }
         //HTTP request to api/movies/{id} route. Providing id after movies
         [HttpGet("{id}")]
@@ -32,9 +46,9 @@ namespace Vidly.Controllers
 
         }
 
-        //HTTP request to api/movies/{year}/{moth} route, provide these two values
+        //HTTP request to api/movies/{year}/{moth} ro ute, provide these two values
         //apply constraint to month, has to be 2 numbers
-        [HttpGet("{year}/{month:regex(\\d{2}):range(1,12)}")]
+        [HttpGet("{year}/{month:range(1,12)}")]
         public IActionResult ByReleaseDate(int year, int month)
         {
             
