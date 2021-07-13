@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Core/1.0.0": {
+      "type": "project",
+      "path": "../Core/Core.csproj",
+      "msbuildProject": "../Core/Core.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "Core >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\PC\\.nuget\\packages\\": {}
@@ -13,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\source\\repos\\Vidly\\Vidly\\Vidly.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\source\\repos\\Vildly\\Vidly\\Vidly.csproj",
       "projectName": "Vidly",
-      "projectPath": "C:\\Users\\PC\\source\\repos\\Vidly\\Vidly\\Vidly.csproj",
+      "projectPath": "C:\\Users\\PC\\source\\repos\\Vildly\\Vidly\\Vidly.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\source\\repos\\Vidly\\Vidly\\obj\\",
+      "outputPath": "C:\\Users\\PC\\source\\repos\\Vildly\\Vidly\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\PC\\source\\repos\\Vildly\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\PC\\source\\repos\\Vildly\\Core\\Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
