@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iaqNPASrCLG+X7A+f33q/oaR0KTIjw/cLvpZo2yB0ijTx95oIdnBGNUw5Na+aJYSvxxMZeQ17rzMnoyBCZknWg==",
+  "dgSpecHash": "9qaflx1KtqXKzlLwMgUIY/7MUlkYObQxjeN7zYmSPVqB9yJ4oE8DOw/LzaR4rpcOhSCUzX7ZlEiWIpI31zwYzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\source\\repos\\Vildly\\Vidly\\Vidly.csproj",
+  "projectFilePath": "C:\\Users\\PC\\source\\repos\\Vildly\\Vidly\\Vidly.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
