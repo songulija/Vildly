@@ -1,3 +1,4 @@
+using DataStore.EF;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,7 +28,7 @@ namespace Vidly
             services.AddControllersWithViews();
             //adding controllers
             services.AddControllers();
-            
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("name=Data Source=DESKTOP-6DB6D8B;Initial Catalog=VidlyDB;Integrated Security=True:DefaultConnection"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

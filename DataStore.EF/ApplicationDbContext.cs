@@ -11,9 +11,9 @@ namespace DataStore.EF
     /// <summary>
     /// have to inherit from DbContext. This instance represents session with database and
     /// can be used to query and save instances of your entities
-    /// BugsContext represents database itself
+    /// ApplicationDbContext represents database itself
     /// </summary>
-    public class BugsContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
         /**
          * Create a constructor. With DbContextOptions 
@@ -22,7 +22,7 @@ namespace DataStore.EF
          * we will have to provide those options to this constructor 
          * then it'll go to constructor of DbContext class
          */
-        public BugsContext(DbContextOptions options) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
         {
         }
 
